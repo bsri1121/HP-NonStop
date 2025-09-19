@@ -1,0 +1,17 @@
+identification division.
+program-id. Name Age.
+
+data division.
+   working-storage section.
+   01  name        pic x(20).
+   01  age         pic 9(3).
+
+   procedure division.
+         display "Enter your name: ".
+         accept name.
+         display "Enter your age: ".
+         accept age.
+         display "Hello, " name " you are " age " years old.".
+         stop run.
+
+   
