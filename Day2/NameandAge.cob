@@ -1,5 +1,5 @@
 identification division.
-program-id. Name Age.
+program-id. NameAge.
 
 data division.
    working-storage section.
