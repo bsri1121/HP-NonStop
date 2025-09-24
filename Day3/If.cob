@@ -1,23 +1,23 @@
-IDENTIFICATION DIVISION.
-PROGRAM-ID. IfExample.
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. IfExample.
 
-DATA DIVISION.
-WORKING-STORAGE SECTION.
-01 NUM1         PIC 9(5) VALUE ZEROS.
-01 NUM2         PIC 9(5) VALUE ZEROS.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 Num1    PIC 9(3).
+       01 Num2    PIC 9(3).
 
-PROCEDURE DIVISION.
-DISPLAY "Enter first number: "
-ACCEPT NUM1
-DISPLAY "Enter second number: "
-ACCEPT NUM2
+       PROCEDURE DIVISION.
+           DISPLAY "Enter first number: "
+           ACCEPT Num1
 
-IF NUM1 > NUM2
-    DISPLAY "First number is greater than second number."
-ELSE IF NUM1 < NUM2
-    DISPLAY "Second number is greater than first number."
-ELSE
-    DISPLAY "Both numbers are equal."
-END-IF
+           DISPLAY "Enter second number: "
+           ACCEPT Num2
 
-STOP RUN.
+           IF Num1 > Num2
+               DISPLAY "Num1 is greater than Num2"
+           ELSE
+               DISPLAY "Num2 is greater or equal to Num1"
+           END-IF
+
+           STOP RUN.
+
