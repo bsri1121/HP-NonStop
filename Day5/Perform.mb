@@ -1,0 +1,113 @@
+1. PERFORM n TIMES (Fixed Iteration Loop)
+
+This is used when you know exactly how many times you want to repeat something.
+
+Code Example
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. FIXED-LOOP.
+
+       PROCEDURE DIVISION.
+           PERFORM 5 TIMES
+               DISPLAY "HELLO COBOL"
+           END-PERFORM.
+           STOP RUN.
+
+
+Output:
+
+HELLO COBOL
+HELLO COBOL
+HELLO COBOL
+HELLO COBOL
+HELLO COBOL
+
+2. PERFORM UNTIL (Condition-Based Loop)
+
+This repeats until a condition becomes true. Similar to a while loop in other languages.
+
+Code Example
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. UNTIL-LOOP.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 COUNTER PIC 9(2) VALUE 1.
+
+       PROCEDURE DIVISION.
+           PERFORM UNTIL COUNTER > 5
+               DISPLAY "COUNTER = " COUNTER
+               ADD 1 TO COUNTER
+           END-PERFORM.
+           STOP RUN.
+
+
+Output:
+
+COUNTER = 1
+COUNTER = 2
+COUNTER = 3
+COUNTER = 4
+COUNTER = 5
+
+3. PERFORM VARYING (Variable-Controlled Loop)
+
+This is like a for loop in C/Java — you can initialize, increment, and check condition in one place.
+
+Code Example
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. VARYING-LOOP.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 I PIC 9(2).
+
+       PROCEDURE DIVISION.
+           PERFORM VARYING I FROM 1 BY 1 UNTIL I > 5
+               DISPLAY "I = " I
+           END-PERFORM.
+           STOP RUN.
+
+
+Output:
+
+I = 1
+I = 2
+I = 3
+I = 4
+I = 5
+
+4. PERFORM … THROUGH (Paragraph Loop)
+
+Executes a sequence of paragraphs (like subroutines). Good for structuring programs.
+
+Code Example
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. THROUGH-LOOP.
+
+       PROCEDURE DIVISION.
+           PERFORM STEP-1 THROUGH STEP-3.
+           STOP RUN.
+
+       STEP-1.
+           DISPLAY "STEP 1".
+       STEP-2.
+           DISPLAY "STEP 2".
+       STEP-3.
+           DISPLAY "STEP 3".
+
+
+Output:
+
+STEP 1
+STEP 2
+STEP 3
+
+Summary:
+
+PERFORM n TIMES → repeat fixed number of times.
+
+PERFORM UNTIL → repeat until condition is true.
+
+PERFORM VARYING → repeat with a counter (like for).
+
+PERFORM … THROUGH → run multiple paragraphs in order.
